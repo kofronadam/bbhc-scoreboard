@@ -11,12 +11,12 @@ import {
 export const Route = createFileRoute("/_authenticated/prilozit")({
   head: () => ({
     meta: [
-      { title: "Přidat výsledek — FRAG.TABLE" },
+      { title: "Přidat výsledek" },
       {
         name: "description",
         content: "Přihlas svůj výsledek z bitvy do měsíčního žebříčku FRAG.TABLE.",
       },
-      { property: "og:title", content: "Přidat výsledek — FRAG.TABLE" },
+      { property: "og:title", content: "Přidat výsledek" },
       {
         property: "og:description",
         content: "Přihlas svůj výsledek z bitvy do měsíčního žebříčku FRAG.TABLE.",

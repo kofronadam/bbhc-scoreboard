@@ -25,9 +25,9 @@ import {
 export const Route = createFileRoute("/_authenticated/moderace")({
   head: () => ({
     meta: [
-      { title: "Moderace — FRAG.TABLE" },
+      { title: "Moderace" },
       { name: "description", content: "Fronta výsledků čekajících na schválení." },
-      { property: "og:title", content: "Moderace — FRAG.TABLE" },
+      { property: "og:title", content: "Moderace" },
       { property: "og:description", content: "Fronta výsledků čekajících na schválení." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

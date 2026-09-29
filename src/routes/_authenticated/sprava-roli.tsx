@@ -15,9 +15,9 @@ import { useSession } from "@/hooks/use-session";
 export const Route = createFileRoute("/_authenticated/sprava-roli")({
   head: () => ({
     meta: [
-      { title: "Správa rolí — FRAG.TABLE" },
+      { title: "Správa rolí" },
       { name: "description", content: "Přiřazování rolí moderátor a admin." },
-      { property: "og:title", content: "Správa rolí — FRAG.TABLE" },
+      { property: "og:title", content: "Správa rolí" },
       { property: "og:description", content: "Přiřazování rolí moderátor a admin." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
