@@ -16,13 +16,13 @@ export const Route = createFileRoute("/auth")({
   }),
   head: () => ({
     meta: [
-      { title: "Přihlášení a registrace — FRAG.TABLE" },
+      { title: "Přihlášení a registrace" },
       {
         name: "description",
         content:
           "Zaregistruj se nebo přihlas do FRAG.TABLE a přidávej své výsledky do měsíčního žebříčku.",
       },
-      { property: "og:title", content: "Přihlášení a registrace — FRAG.TABLE" },
+      { property: "og:title", content: "Přihlášení a registrace" },
       {
         property: "og:description",
         content:

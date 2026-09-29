@@ -13,13 +13,13 @@ export const Route = createFileRoute("/archiv")({
   loader: ({ context }) => context.queryClient.ensureQueryData(archiveQuery()),
   head: () => ({
     meta: [
-      { title: "Archiv sezón — FRAG.TABLE" },
+      { title: "Archiv sezón" },
       {
         name: "description",
         content:
           "Výsledky minulých měsíců žebříčku FRAG.TABLE. Tabulky se resetují každý měsíc, ale historie zůstává.",
       },
-      { property: "og:title", content: "Archiv sezón — FRAG.TABLE" },
+      { property: "og:title", content: "Archiv sezón" },
       {
         property: "og:description",
         content:
