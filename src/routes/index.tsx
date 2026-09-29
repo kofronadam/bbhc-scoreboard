@@ -20,13 +20,13 @@ export const Route = createFileRoute("/")({
   loader: ({ context }) => context.queryClient.ensureQueryData(leaderboardQuery()),
   head: () => ({
     meta: [
-      { title: "Měsíční scoreboard" },
+      { title: " — FRAG.TABLE" },
       {
         name: "description",
         content:
           "Komunitní scoreboard: top damage, top spot a top kills. Zaregistruj se, přidej výsledek z bitvy a pošli klip na Instagram.",
       },
-      { property: "og:title", content: "Měsíční scoreboard" },
+      { property: "og:title", content: " — FRAG.TABLE" },
       {
         property: "og:description",
         content:

@@ -16,13 +16,13 @@ export const Route = createFileRoute("/klipy")({
   loader: ({ context }) => context.queryClient.ensureQueryData(publishedClipsQuery()),
   head: () => ({
     meta: [
-      { title: "Klipy — FRAG.TABLE" },
+      { title: "Klipy" },
       {
         name: "description",
         content:
           "Pošli záznam ze své crazy bitvy — sestříháme ho do krátkého videa a hodíme na Instagram.",
       },
-      { property: "og:title", content: "Klipy — FRAG.TABLE" },
+      { property: "og:title", content: "Klipy" },
       {
         property: "og:description",
         content:
