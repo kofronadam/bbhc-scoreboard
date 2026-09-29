@@ -1,0 +1,1 @@
+CREATE POLICY "Moderators delete entries" ON public.entries FOR DELETE TO authenticated USING (public.has_role(auth.uid(), 'moderator'::app_role) OR public.has_role(auth.uid(), 'admin'::app_role));

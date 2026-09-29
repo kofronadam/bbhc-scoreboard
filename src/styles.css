@@ -1,0 +1,203 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * FRAG.TABLE design system — "Neon Kinetic"
+ * Dark esports scoreboard: near-black surfaces, violet brand accent,
+ * per-category neon colors (damage / spot / kills).
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-damage: var(--damage);
+  --color-spot: var(--spot);
+  --color-kill: var(--kill);
+  --color-rank: var(--rank);
+  --color-chart-1: var(--damage);
+  --color-chart-2: var(--spot);
+  --color-chart-3: var(--kill);
+  --color-chart-4: var(--primary);
+  --color-chart-5: var(--rank);
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, sans-serif;
+  --shadow-brand-glow: 0 0 20px color-mix(in oklab, var(--primary) 30%, transparent);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.141 0.005 285.9);
+  --foreground: oklch(0.967 0.003 286.4);
+  --card: oklch(0.21 0.006 285.9);
+  --card-foreground: oklch(0.967 0.003 286.4);
+  --popover: oklch(0.21 0.006 285.9);
+  --popover-foreground: oklch(0.967 0.003 286.4);
+  --primary: oklch(0.606 0.25 292.7);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.21 0.006 285.9);
+  --secondary-foreground: oklch(0.967 0.003 286.4);
+  --muted: oklch(0.21 0.006 285.9);
+  --muted-foreground: oklch(0.552 0.016 285.9);
+  --accent: oklch(0.274 0.01 285.9);
+  --accent-foreground: oklch(0.967 0.003 286.4);
+  --destructive: oklch(0.645 0.246 16.4);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.606 0.25 292.7);
+  --damage: oklch(0.645 0.246 16.4);
+  --spot: oklch(0.696 0.17 162.5);
+  --kill: oklch(0.623 0.214 259.8);
+  --rank: oklch(0.37 0.013 285.8);
+}
+
+.dark {
+  --background: oklch(0.141 0.005 285.9);
+  --foreground: oklch(0.967 0.003 286.4);
+  --card: oklch(0.21 0.006 285.9);
+  --card-foreground: oklch(0.967 0.003 286.4);
+  --popover: oklch(0.21 0.006 285.9);
+  --popover-foreground: oklch(0.967 0.003 286.4);
+  --primary: oklch(0.606 0.25 292.7);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.21 0.006 285.9);
+  --secondary-foreground: oklch(0.967 0.003 286.4);
+  --muted: oklch(0.21 0.006 285.9);
+  --muted-foreground: oklch(0.552 0.016 285.9);
+  --accent: oklch(0.274 0.01 285.9);
+  --accent-foreground: oklch(0.967 0.003 286.4);
+  --destructive: oklch(0.645 0.246 16.4);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.606 0.25 292.7);
+  --damage: oklch(0.645 0.246 16.4);
+  --spot: oklch(0.696 0.17 162.5);
+  --kill: oklch(0.623 0.214 259.8);
+  --rank: oklch(0.37 0.013 285.8);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  /* Neon Kinetic building blocks */
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .season-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background: color-mix(in oklab, var(--primary) 10%, transparent);
+    border: 1px solid color-mix(in oklab, var(--primary) 20%, transparent);
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .btn-brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    box-shadow: var(--shadow-brand-glow);
+    transition: background-color 0.15s ease;
+  }
+  .btn-brand:hover {
+    background: color-mix(in oklab, var(--primary) 90%, white);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--muted-foreground);
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease;
+  }
+  .btn-ghost:hover {
+    background: oklch(1 0 0 / 5%);
+    color: var(--foreground);
+  }
+
+  .card-surface {
+    background: var(--card);
+    border: 1px solid oklch(1 0 0 / 5%);
+    border-radius: 1rem;
+  }
+
+  .field-input {
+    width: 100%;
+    background: var(--background);
+    border: 1px solid var(--input);
+    border-radius: 0.5rem;
+    padding: 0.625rem 0.875rem;
+    font-size: 0.875rem;
+    color: var(--foreground);
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+  .field-input:focus {
+    border-color: var(--ring);
+  }
+  .field-input::placeholder {
+    color: var(--muted-foreground);
+  }
+}
